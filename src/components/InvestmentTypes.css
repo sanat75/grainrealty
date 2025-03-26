@@ -1,0 +1,70 @@
+.investment-types {
+  background-color: var(--white);
+}
+
+.investment-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.investment-card {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.investment-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.investment-icon {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.investment-card h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.investment-card p {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+}
+
+.investment-segments {
+  margin-bottom: 1.5rem;
+}
+
+.investment-segments h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: var(--secondary);
+}
+
+.investment-segments ul {
+  list-style: none;
+}
+
+.investment-segments li {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+@media (max-width: 992px) {
+  .investment-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .investment-grid {
+    grid-template-columns: 1fr;
+  }
+}
