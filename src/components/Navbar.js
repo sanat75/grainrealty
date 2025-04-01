@@ -1,5 +1,6 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ isScrolled }) => {
@@ -21,11 +22,12 @@ const Navbar = ({ isScrolled }) => {
           <span></span>
         </div>
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li><a href="#home" onClick={() => setMenuOpen(false)}>Home</a></li>
-          {/* <li><a href="#about" onClick={() => setMenuOpen(false)}>About</a></li>
-          <li><a href="#investments" onClick={() => setMenuOpen(false)}>Investments</a></li>
-          <li><a href="#portfolio" onClick={() => setMenuOpen(false)}>Portfolio</a></li>
-          <li><a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a></li> */}
+          <li>
+            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+          </li>
+          <li>
+            <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -33,4 +35,3 @@ const Navbar = ({ isScrolled }) => {
 };
 
 export default Navbar;
-
