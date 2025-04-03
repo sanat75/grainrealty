@@ -1,20 +1,41 @@
 // src/components/Navbar.js
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ isScrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
-
+  
+  const handleNavigation = (path) => {
+    // Close menu if open
+    setMenuOpen(false);
+    
+    // Scroll to top
+    window.scrollTo(0, 0);
+    
+    // Navigate to the path
+    navigate(path);
+  };
+  
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <div className="logo">
-          <h1>Grain Realty</h1>
+          <a 
+            href="#" 
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavigation('/');
+            }} 
+            className="logo-link"
+          >
+            <h1>Grain Realty</h1>
+          </a>
         </div>
         <div className={`menu-toggle ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
           <span></span>
@@ -23,10 +44,26 @@ const Navbar = ({ isScrolled }) => {
         </div>
         <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
           <li>
-            <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('/');
+              }}
+            >
+              Home
+            </a>
           </li>
           <li>
-            <Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+            <a 
+              href="#" 
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavigation('/portfolio');
+              }}
+            >
+              Portfolio
+            </a>
           </li>
         </ul>
       </div>

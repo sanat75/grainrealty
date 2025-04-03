@@ -51,7 +51,7 @@ const Contact = () => {
               <div className="info-icon">📍</div>
               <div className="info-content">
                 <h4>Our Office</h4>
-                <p>123 Business Avenue, Suite 500<br />Metro City, ST 12345</p>
+                <p>2902 , 33 Elm Drive West<br />Mississauga , Ontario</p>
               </div>
             </div>
             
@@ -59,7 +59,7 @@ const Contact = () => {
               <div className="info-icon">📱</div>
               <div className="info-content">
                 <h4>Contact Details</h4>
-                <p>Phone: (555) 123-4567<br />Email: info@grainrealty.com</p>
+                <p>Phone: +16478196399<br />Email: info@grainrealty.com</p>
               </div>
             </div>
             

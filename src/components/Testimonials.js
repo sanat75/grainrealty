@@ -1,4 +1,3 @@
-// src/components/Testimonials.js
 import React, { useState, useEffect } from 'react';
 import './Testimonials.css';
 
@@ -7,7 +6,7 @@ const Testimonials = () => {
     {
       id: 1,
       name: "Sarah Johnson",
-    //   position: "Property Developer",
+      position: "Property Developer",
       image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80",
       text: "Working with Grain Realty has been an absolute pleasure. Their deep market knowledge and commitment to excellence have made all the difference in our investment success."
     },
@@ -41,18 +40,41 @@ const Testimonials = () => {
     setCurrentIndex(index);
   };
 
+  const handlePrevClick = () => {
+    setCurrentIndex((prevIndex) => 
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNextClick = () => {
+    setCurrentIndex((prevIndex) => 
+      (prevIndex + 1) % testimonials.length
+    );
+  };
+
   return (
     <section className="testimonials">
       <div className="container">
         <h2 className="section-title">Client Testimonials</h2>
-        
         <div className="testimonial-slider">
+          <button 
+            className="arrow-button prev-button" 
+            onClick={handlePrevClick}
+            aria-label="Previous testimonial"
+          >
+            &larr;
+          </button>
+          
           <div className="testimonial-slide">
             <div className="testimonial-image">
               <img src={testimonials[currentIndex].image} alt={testimonials[currentIndex].name} />
             </div>
+            
             <div className="testimonial-content">
-              <p className="testimonial-text">"{testimonials[currentIndex].text}"</p>
+              <p className="testimonial-text">
+                "{testimonials[currentIndex].text}"
+              </p>
+              
               <div className="testimonial-author">
                 <h4>{testimonials[currentIndex].name}</h4>
                 <p>{testimonials[currentIndex].position}</p>
@@ -60,13 +82,22 @@ const Testimonials = () => {
             </div>
           </div>
           
+          <button 
+            className="arrow-button next-button" 
+            onClick={handleNextClick}
+            aria-label="Next testimonial"
+          >
+            &rarr;
+          </button>
+          
           <div className="testimonial-dots">
             {testimonials.map((_, index) => (
-              <span 
-                key={index} 
-                className={`dot ${index === currentIndex ? 'active' : ''}`} 
+              <button
+                key={index}
+                className={`dot ${currentIndex === index ? 'active' : ''}`}
                 onClick={() => handleDotClick(index)}
-              ></span>
+                aria-label={`Go to testimonial ${index + 1}`}
+              />
             ))}
           </div>
         </div>

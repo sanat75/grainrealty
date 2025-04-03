@@ -1,13 +1,8 @@
-
-.testimonials {
-  background-color: var(--white);
-  position: relative;
-}
-
 .testimonial-slider {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  padding: 2rem 0;
 }
 
 .testimonial-slide {
@@ -58,6 +53,33 @@
   font-weight: 500;
 }
 
+.arrow-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: black;
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+.next-button {
+  right: -20px;
+}
+
+.arrow-button:hover {
+  opacity: 0.8;
+}
+
 .testimonial-dots {
   display: flex;
   justify-content: center;
@@ -72,6 +94,8 @@
   margin: 0 5px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
+  padding: 0;
 }
 
 .dot.active {
@@ -88,5 +112,16 @@
   
   .testimonial-image {
     margin: 0 auto;
+  }
+  
+  .arrow-button {
+    top: auto;
+    bottom: -60px;
+    right: calc(50% - 25px);
+    transform: none;
+  }
+  
+  .testimonial-dots {
+    margin-top: 4rem;
   }
 }
