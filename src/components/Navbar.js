@@ -1,6 +1,5 @@
-// src/components/Navbar.js
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = ({ isScrolled }) => {
@@ -26,12 +25,12 @@ const Navbar = ({ isScrolled }) => {
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container navbar-container">
         <div className="logo">
-          <a 
-            href="#" 
+          <a
+            href="#"
             onClick={(e) => {
               e.preventDefault();
               handleNavigation('/');
-            }} 
+            }}
             className="logo-link"
           >
             <h1>Grain Realty</h1>
@@ -42,30 +41,7 @@ const Navbar = ({ isScrolled }) => {
           <span></span>
           <span></span>
         </div>
-        <ul className={`nav-links ${menuOpen ? 'active' : ''}`}>
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigation('/');
-              }}
-            >
-              Home
-            </a>
-          </li>
-          <li>
-            <a 
-              href="#" 
-              onClick={(e) => {
-                e.preventDefault();
-                handleNavigation('/portfolio');
-              }}
-            >
-              Portfolio
-            </a>
-          </li>
-        </ul>
+        {/* Navigation links have been removed */}
       </div>
     </nav>
   );

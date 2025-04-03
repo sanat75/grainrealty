@@ -39,10 +39,11 @@ function App() {
           <Route path="/" element={
             <>
               <Hero />
-              <About />
-              <InvestmentTypes />
-              <Testimonials />
+              {/* <About /> */}
               <Team />
+              <InvestmentTypes />
+              <Portfolio />
+              {/* <Team /> */}
               <Contact />
             </>
           } />

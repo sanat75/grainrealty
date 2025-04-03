@@ -12,7 +12,7 @@ const Hero = () => {
         <p className="hero-subtitle">Discover exceptional properties with Grain Realty</p>
         <div className="hero-cta">
           <a href="#investments" className="btn">Explore Investments</a>
-          <Link to="/portfolio" className="btn">View Our Portfolio</Link>
+          {/* <Link to="#portfolio" className="btn">View Our Portfolio</Link> */}
           <a href="#contact" className="btn btn-outline">Contact Us</a>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Portfolio.css';
 
 // Import all images
@@ -18,71 +18,6 @@ import res2 from '../assets/res2.jpg';
 import res3 from '../assets/res3.png';
 
 const Portfolio = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-  
-  // Section descriptions with proper formatting and consistent structure
-  const sectionDescriptions = {
-    industrial: {
-      title: "Industrial Excellence",
-      description: [
-        {
-          heading: "Leading Industrial Real Estate Agency in the Greater Toronto Area",
-          content: "Grain Realty is a premier industrial real estate company in the Greater Toronto Area, specializing in high-quality industrial buildings for rent. With in-depth expertise in the industrial sector, we provide tailored solutions to meet the diverse needs of businesses of all sizes."
-        },
-        {
-          heading: "Industrial Property for Rent in the Greater Toronto Area",
-          content: "Looking for an industrial property for rent in the Greater Toronto Area? Grain Realty offers a wide selection of strategically located industrial spaces designed to enhance your business operations. Our properties come equipped with modern facilities and infrastructure, ideal for manufacturing and warehousing."
-        },
-        {
-          heading: "Why Choose Grain Realty?",
-          content: "As a trusted name in industrial real estate, we are committed to delivering exceptional service and full support throughout the leasing process. Our experts work closely with you to find the perfect industrial space that ensures efficiency and business growth. Whether you're expanding operations or launching a new venture, Grain Realty is your ideal partner for industrial real estate solutions in the Greater Toronto Area. Contact us today to explore our available properties and take your business to the next level with Grain Realty."
-        }
-      ]
-    },
-    commercial: {
-      title: "Business Prosperity Spaces",
-      description: [
-        {
-          heading: "Commercial Property for Sale in the Greater Toronto Area",
-          content: "Grain Realty offers premium commercial properties for sale in the Greater Toronto Area, Canada. Our inventory includes prime spaces in key locations, ensuring excellent visibility and accessibility for your business. Whether you're expanding your operations or seeking a high-value investment, our commercial properties are an excellent choice."
-        },
-        {
-          heading: "Commercial Property for Rent in the Greater Toronto Area",
-          content: "Grain Realty provides commercial buildings for rent across the Greater Toronto Area, offering flexible and strategic leasing solutions. Our rental spaces are designed to meet the unique needs of various industries, featuring modern amenities and prime locations to give your business a competitive edge."
-        },
-        {
-          heading: "Pre-Leased Property for Sale in Canada",
-          content: "For investors seeking stable and reliable income, explore our selection of pre-leased properties for sale in Canada. These properties come with reputable tenants and long-term leases, ensuring a steady revenue stream. Grain Realty simplifies the process of finding and acquiring pre-leased commercial spaces that align with your investment goals."
-        },
-        {
-          heading: "Why Choose Grain Realty?",
-          content: "Grain Realty is a trusted name in commercial real estate, dedicated to providing exceptional property solutions in the Greater Toronto Area. With extensive market expertise and a committed team, we help you find the ideal property—whether you're buying, renting, or investing. Contact us today to explore our commercial properties and see how Grain Realty can support your business goals."
-        }
-      ]
-    },
-    residential: {
-      title: "Dream Living Destinations",
-      description: [
-        {
-          heading: "Residential Properties for Sale in the Greater Toronto Area",
-          content: "Grain Realty offers a wide range of residential properties for sale in the Greater Toronto Area, Canada. From modern condos to spacious family homes, our listings feature prime locations with excellent amenities. Whether you're a first-time buyer or looking for an upgrade, we help you find the perfect home."
-        },
-        {
-          heading: "Residential Properties for Rent in the Greater Toronto Area",
-          content: "Looking for a home to rent? Grain Realty provides quality rental properties across the Greater Toronto Area. Our listings include apartments, townhouses, and detached homes with flexible leasing options, ensuring you find a comfortable and convenient living space."
-        },
-        {
-          heading: "Investment Properties in Canada",
-          content: "For investors seeking long-term value, our portfolio includes pre-leased residential properties with reliable tenants. These properties provide a steady rental income and are a great addition to any real estate investment portfolio. Grain Realty simplifies the process, ensuring seamless transactions."
-        },
-        {
-          heading: "Why Choose Grain Realty?",
-          content: "Grain Realty is a trusted name in residential real estate, offering expert guidance and a wide range of property options in the Greater Toronto Area. Whether you're buying, renting, or investing, our team is here to help you make informed decisions. Contact us today to find your dream home or next investment property with Grain Realty."
-        }
-      ]
-    }
-  };
-  
   const properties = [
     {
       id: 1,
@@ -183,35 +118,14 @@ const Portfolio = () => {
       image: ind5
     }
   ];
-    
-  const filteredProperties = activeFilter === 'all' 
-    ? properties 
-    : properties.filter(property => property.type === activeFilter);
-  
-  // Render section with properly formatted description
-  const renderSectionWithDescription = (type) => {
-    if (activeFilter !== 'all' && activeFilter !== type) return null;
-    
-    const typeProperties = properties.filter(property => property.type === type);
-    if (typeProperties.length === 0) return null;
-    
-    return (
-      <div className="property-section" key={type}>
-        {activeFilter !== 'all' && (
-          <div className="section-description">
-            <h3>{sectionDescriptions[type].title}</h3>
-            <div className="description-content">
-              {sectionDescriptions[type].description.map((section, index) => (
-                <div key={index} className="description-section">
-                  <h4><strong>{section.heading}</strong></h4>
-                  <p>{section.content}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
+
+  return (
+    <section id="portfolio" className="portfolio">
+      <div className="container">
+        <h2 className="section-title">Our Portfolio</h2>
+        
         <div className="portfolio-grid">
-          {typeProperties.map((property) => (
+          {properties.map((property) => (
             <div key={property.id} className="portfolio-item">
               <div className="portfolio-img">
                 <img src={property.image} alt={property.name} />
@@ -224,51 +138,6 @@ const Portfolio = () => {
             </div>
           ))}
         </div>
-      </div>
-    );
-  };
-
-  return (
-    <section id="portfolio" className="portfolio">
-      <div className="container">
-        <h2 className="section-title">Our Portfolio</h2>
-        
-        <div className="portfolio-filters">
-          <button 
-            className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('all')}
-          >
-            All
-          </button>
-          <button 
-            className={`filter-btn ${activeFilter === 'residential' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('residential')}
-          >
-            Residential
-          </button>
-          <button 
-            className={`filter-btn ${activeFilter === 'commercial' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('commercial')}
-          >
-            Commercial
-          </button>
-          <button 
-            className={`filter-btn ${activeFilter === 'industrial' ? 'active' : ''}`}
-            onClick={() => setActiveFilter('industrial')}
-          >
-            Industrial
-          </button>
-        </div>
-        
-        {activeFilter === 'all' ? (
-          <>
-            {renderSectionWithDescription('residential')}
-            {renderSectionWithDescription('commercial')}
-            {renderSectionWithDescription('industrial')}
-          </>
-        ) : (
-          renderSectionWithDescription(activeFilter)
-        )}
       </div>
     </section>
   );

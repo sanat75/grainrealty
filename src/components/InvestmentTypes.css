@@ -1,11 +1,14 @@
 .investment-types {
   background-color: var(--white);
+  padding: 4rem 0;
 }
 
 .investment-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .investment-card {
@@ -15,6 +18,9 @@
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .investment-card:hover {
@@ -23,48 +29,102 @@
 }
 
 .investment-icon {
-  font-size: 3rem;
+  font-size: 3.5rem;
   margin-bottom: 1.5rem;
 }
 
 .investment-card h3 {
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--primary);
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .investment-card p {
   color: var(--gray);
   margin-bottom: 1.5rem;
+  line-height: 1.6;
+  max-width: 90%;
 }
 
 .investment-segments {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .investment-segments h4 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
   color: var(--secondary);
+  position: relative;
+  display: inline-block;
+}
+
+.investment-segments h4:after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: var(--secondary);
 }
 
 .investment-segments ul {
   list-style: none;
+  padding: 0;
+  margin-top: 1rem;
 }
 
 .investment-segments li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.7rem;
   color: var(--gray);
+  padding: 0.4rem 0;
+}
+
+.btn.btn-outline {
+  border: 2px solid var(--secondary);
+  padding: 0.7rem 2rem;
+  border-radius: 30px;
+  color: var(--secondary);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: auto;
+}
+
+.btn.btn-outline:hover {
+  background-color: var(--secondary);
+  color: white;
+}
+
+/* Add fade-in animation */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 992px) {
   .investment-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
   .investment-grid {
     grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .investment-card {
+    padding: 2rem;
   }
 }
