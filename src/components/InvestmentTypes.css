@@ -28,6 +28,63 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Image Gallery Styles */
+.image-gallery {
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 350px; /* Increased height from 250px to 350px */
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Changed from 'cover' to 'contain' to prevent cropping */
+  transition: transform 0.3s ease;
+}
+
+.main-image:hover {
+  transform: scale(1.05);
+}
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.thumbnail {
+  width: 60px;
+  height: 60px;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.thumbnail:hover {
+  transform: translateY(-3px);
+}
+
+.thumbnail.active {
+  border-color: var(--secondary);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Original styles */
 .investment-icon {
   font-size: 3.5rem;
   margin-bottom: 1.5rem;
@@ -116,6 +173,10 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
+  
+  .main-image-container {
+    height: 300px; /* Slightly smaller for medium screens */
+  }
 }
 
 @media (max-width: 768px) {
@@ -126,5 +187,9 @@
   
   .investment-card {
     padding: 2rem;
+  }
+  
+  .main-image-container {
+    height: 250px; /* Smaller for mobile screens but still larger than original */
   }
 }

@@ -30,7 +30,7 @@ const Footer = () => {
               <h4>Investment Types</h4>
               <ul>
                 <li><a href="#investments">Residential</a></li>
-                <li><a href="#investments">Commercial</a></li>
+                {/* <li><a href="#investments">Commercial</a></li> */}
                 <li><a href="#investments">Industrial</a></li>
               </ul>
             </div>

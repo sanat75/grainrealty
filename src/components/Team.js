@@ -1,29 +1,45 @@
 // src/components/Team.js
 import React, { useState } from 'react';
 import './Team.css';
+import harsh from '../assets/harsh.jpg';
+import chan from '../assets/chand.jpg';
+import sat from '../assets/sat.jpg';
+import yuri from '../assets/yuri.jpg';
 
-// Sample team member data (you can replace with actual data)
+
+
+
+
+
+// Team member data with 4 members
 const teamMembers = [
   {
     id: 1,
-    name: "John Doe",
+    name: "Harshdeep Singh",
     role: "Founder & CEO",
-    photo: "/api/placeholder/300/300", // Replace with actual photo path
-    description: "John has over 15 years of experience in real estate investment and strategic development."
+    photo: harsh, // Replace with actual photo path
+    description: "Hrash has over 15 years of experience in real estate investment and strategic development."
   },
   {
     id: 2,
-    name: "Jane Smith",
+    name: "Chandeep Singh",
     role: "Chief Operations Officer",
-    photo: "/api/placeholder/300/300", // Replace with actual photo path
-    description: "Jane specializes in operational efficiency and portfolio management strategies."
+    photo: chan, // Replace with actual photo path
+    description: "Chandeep specializes in operational efficiency and portfolio management strategies."
   },
   {
     id: 3,
-    name: "Mike Johnson",
+    name: "Satinder Singh",
     role: "Senior Investment Analyst",
-    photo: "/api/placeholder/300/300", // Replace with actual photo path
-    description: "Mike brings deep market insights and analytical expertise to our investment decisions."
+    photo: sat, // Replace with actual photo path
+    description: "Satinder brings deep market insights and analytical expertise to our investment decisions."
+  },
+  {
+    id: 4,
+    name: "Yuri Levin",
+    role: "Director of Acquisitions",
+    photo:yuri, // Replace with actual photo path
+    description: "Yuri leads our property acquisition team with over a decade of experience in identifying high-value investment opportunities."
   }
 ];
 
@@ -56,7 +72,7 @@ const Team = () => {
   return (
     <section className="team-section">
       <h2>Our Team</h2>
-      <div className="team-grid">
+      <div className="team-row">
         {teamMembers.map(member => (
           <TeamMemberCard key={member.id} member={member} />
         ))}

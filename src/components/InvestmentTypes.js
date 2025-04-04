@@ -1,30 +1,60 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './InvestmentTypes.css';
+import res1 from '../assets/res1.jpg';
+import res2 from '../assets/res2.jpg';
+import res3 from '../assets/res3.png';
+import res4 from '../assets/indoor1.jpg';
+import res5 from '../assets/indoor2.jpg';
+import ind1 from '../assets/industry1.jpg';
+import ind2 from '../assets/industry2.jpg';
+import ind3 from '../assets/industry3.jpg';
+
+// Image Gallery Component
+const ImageGallery = ({ images }) => {
+  const [mainImage, setMainImage] = useState(images[0]);
+
+  return (
+    <div className="image-gallery">
+      <div className="main-image-container">
+        <img 
+          src={mainImage} 
+          alt="Property" 
+          className="main-image" 
+        />
+      </div>
+      <div className="thumbnails">
+        {images.map((img, index) => (
+          <div 
+            key={index} 
+            className={`thumbnail ${img === mainImage ? 'active' : ''}`}
+            onClick={() => setMainImage(img)}
+          >
+            <img src={img} alt={`Thumbnail ${index + 1}`} />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
 
 const InvestmentTypes = () => {
   const investmentTypes = [
     {
       id: 1,
       title: "Residential",
-      icon: "🏠",
-      description: "Premium residential properties in high-demand locations, including single-family homes, luxury apartments, and multifamily buildings.",
+      images: [res1, res2, res3,res4,res5],
       segments: [
-        "Single-Family Homes",
-        "Luxury Apartments",
-        "Multifamily Buildings",
-        "Vacation Properties"
+        "Single family /Detached homes",
+        "Apartments/Condominiums",
       ]
     },
     {
       id: 2,
       title: "Industrial",
-      icon: "🏭",
-      description: "High-performing industrial properties including warehouses, distribution centers, and manufacturing facilities in key logistics hubs.",
+      images: [ind1,ind2,ind3], // You can adjust these or add different images
       segments: [
-        "Warehouses",
-        "Distribution Centers",
         "Manufacturing Facilities",
-        "Logistics Hubs"
+        "Commercial Office Spaces"
       ]
     }
   ];
@@ -36,9 +66,11 @@ const InvestmentTypes = () => {
         <div className="investment-grid">
           {investmentTypes.map((type, index) => (
             <div key={type.id} className="investment-card fade-in" style={{animationDelay: `${index * 0.3}s`}}>
-              <div className="investment-icon">{type.icon}</div>
               <h3>{type.title}</h3>
-              <p>{type.description}</p>
+              
+              {/* Image Gallery Integration */}
+              <ImageGallery images={type.images} />
+              
               <div className="investment-segments">
                 <h4>Segments</h4>
                 <ul>
@@ -47,7 +79,7 @@ const InvestmentTypes = () => {
                   ))}
                 </ul>
               </div>
-              <a href="#contact" className="btn btn-outline">Learn More</a>
+              {/* <a href="#contact" className="btn btn-outline">Learn More</a> */}
             </div>
           ))}
         </div>
