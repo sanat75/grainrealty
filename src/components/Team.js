@@ -13,33 +13,35 @@ import yuri from '../assets/yuri.jpg';
 
 // Team member data with 4 members
 const teamMembers = [
+ 
+  
   {
     id: 1,
-    name: "Harshdeep Singh",
-    role: "Founder & CEO",
-    photo: harsh, // Replace with actual photo path
-    description: "Hrash has over 15 years of experience in real estate investment and strategic development."
-  },
-  {
-    id: 2,
-    name: "Chandeep Singh",
-    role: "Chief Operations Officer",
-    photo: chan, // Replace with actual photo path
-    description: "Chandeep specializes in operational efficiency and portfolio management strategies."
-  },
-  {
-    id: 3,
     name: "Satinder Singh",
-    role: "Senior Investment Analyst",
+    role: "Principal Investor",
     photo: sat, // Replace with actual photo path
     description: "Satinder brings deep market insights and analytical expertise to our investment decisions."
   },
   {
-    id: 4,
+    id: 2,
     name: "Yuri Levin",
-    role: "Director of Acquisitions",
+    role: "Principal Investor",
     photo:yuri, // Replace with actual photo path
     description: "Yuri leads our property acquisition team with over a decade of experience in identifying high-value investment opportunities."
+  },
+  {
+    id: 3,
+    name: "Harshdeep Singh",
+    role: "Principal Investor",
+    photo: harsh, // Replace with actual photo path
+    description: "Hrash has over 15 years of experience in real estate investment and strategic development."
+  },
+  {
+    id: 4,
+    name: "Chandeep Singh",
+    role: "Principal Investor",
+    photo: chan, // Replace with actual photo path
+    description: "Chandeep specializes in operational efficiency and portfolio management strategies."
   }
 ];
 

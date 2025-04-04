@@ -14,11 +14,11 @@ const About = () => {
           <div className="about-text">
             {/* <h3>Your Trusted Partner in Real Estate</h3> */}
             <p>
-              At Grain Realty, we pride ourselves on being a premier real estate investment company with a solid reputation for excellence and integrity. With over 15 years of industry experience, we have established ourselves as leaders in identifying and developing valuable property opportunities across residential, commercial, and industrial sectors.
+            At Grain Realty, we focus on strategic investments in both industrial and residential real estate. Operating in Canada and India, we identify high-potential properties that offer lasting value, practical utility, and strong growth potential.
             </p>
-            <p>
+            {/* <p>
               Our team of seasoned professionals combines deep market knowledge with innovative thinking to deliver exceptional results for our clients and partners. We're committed to building long-term relationships based on trust, transparency, and consistent performance.
-            </p>
+            </p> */}
             {/* <div className="about-stats">
               <div className="stat">
                 <span className="stat-number">15+</span>
