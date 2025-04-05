@@ -34,7 +34,7 @@ const teamMembers = [
     name: "Harshdeep Singh",
     role: "Principal Investor",
     photo: harsh, // Replace with actual photo path
-    description: "Hrash has over 15 years of experience in real estate investment and strategic development."
+    description: "Harsh has over 15 years of experience in real estate investment and strategic development."
   },
   {
     id: 4,

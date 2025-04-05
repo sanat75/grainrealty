@@ -21,6 +21,21 @@
   align-items: center;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-image {
+  height: 40px;
+  margin-right: 12px;
+  transition: all 0.3s ease;
+}
+
+.navbar.scrolled .logo-image {
+  height: 35px; /* Slightly smaller when scrolled */
+}
+
 .logo h1 {
   font-family: 'Playfair Display', serif;
   /* Default color (when not scrolled) */
@@ -39,6 +54,8 @@
 .logo-link {
   text-decoration: none;
   color: inherit;
+  display: flex;
+  align-items: center;
 }
 
 .logo-link:hover {
@@ -137,5 +154,13 @@
   
   .menu-toggle.active span:nth-child(3) {
     transform: translateY(-9px) rotate(-45deg);
+  }
+  
+  .logo-image {
+    height: 30px; /* Smaller on mobile */
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem; /* Smaller text on mobile */
   }
 }

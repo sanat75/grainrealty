@@ -8,26 +8,55 @@ import res5 from '../assets/indoor2.jpg';
 import ind1 from '../assets/industry1.jpg';
 import ind2 from '../assets/industry2.jpg';
 import ind3 from '../assets/industry3.jpg';
+import ind4 from '../assets/industry4.jpg';
+import ind5 from '../assets/industry5.jpg';
+import ind6 from '../assets/industry6.jpg';
 
 // Image Gallery Component
 const ImageGallery = ({ images }) => {
   const [mainImage, setMainImage] = useState(images[0]);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  const showPrevImage = () => {
+    const newIndex = currentIndex === 0 ? images.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+    setMainImage(images[newIndex]);
+  };
+  
+  const showNextImage = () => {
+    const newIndex = currentIndex === images.length - 1 ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+    setMainImage(images[newIndex]);
+  };
 
   return (
     <div className="image-gallery">
       <div className="main-image-container">
+        <div className="nav-arrow left-arrow" onClick={showPrevImage}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </div>
         <img 
           src={mainImage} 
           alt="Property" 
           className="main-image" 
         />
+        <div className="nav-arrow right-arrow" onClick={showNextImage}>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </div>
       </div>
       <div className="thumbnails">
         {images.map((img, index) => (
           <div 
             key={index} 
-            className={`thumbnail ${img === mainImage ? 'active' : ''}`}
-            onClick={() => setMainImage(img)}
+            className={`thumbnail ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => {
+              setMainImage(img);
+              setCurrentIndex(index);
+            }}
           >
             <img src={img} alt={`Thumbnail ${index + 1}`} />
           </div>
@@ -42,7 +71,7 @@ const InvestmentTypes = () => {
     {
       id: 1,
       title: "Residential",
-      images: [res1, res2, res3,res4,res5],
+      images: [res1, res2, res3, res4, res5],
       segments: [
         "Single family /Detached homes",
         "Apartments/Condominiums",
@@ -51,7 +80,7 @@ const InvestmentTypes = () => {
     {
       id: 2,
       title: "Industrial",
-      images: [ind1,ind2,ind3], // You can adjust these or add different images
+      images: [ind4, ind3, ind1, ind5, ind6],
       segments: [
         "Manufacturing Facilities",
         "Commercial Office Spaces"
@@ -79,7 +108,6 @@ const InvestmentTypes = () => {
                   ))}
                 </ul>
               </div>
-              {/* <a href="#contact" className="btn btn-outline">Learn More</a> */}
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../assets/logo1.png'; // Import the logo
 
 const Navbar = ({ isScrolled }) => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -33,6 +34,7 @@ const Navbar = ({ isScrolled }) => {
             }}
             className="logo-link"
           >
+            <img src={logo} alt="Grain Realty Logo" className="logo-image" />
             <h1>Grain Realty</h1>
           </a>
         </div>
