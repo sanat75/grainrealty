@@ -47,7 +47,7 @@
 .main-image {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover; /* Changed from contain to cover for better mobile appearance */
   transition: transform 0.3s ease;
 }
 
@@ -93,8 +93,11 @@
   gap: 10px;
   margin-bottom: 15px;
   overflow-x: auto;
-  padding: 5px;
+  padding: 5px 0; /* Changed from 5px to 5px 0 */
   scrollbar-width: thin;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  /* Make sure thumbnails are centered */
+  width: 100%;
 }
 
 .thumbnail {
@@ -206,33 +209,100 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Improved media queries for better responsiveness */
 @media (max-width: 992px) {
   .investment-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   
+  .investment-card {
+    padding: 2rem 1.5rem;
+  }
+  
   .main-image-container {
     height: 300px; /* Slightly smaller for medium screens */
+  }
+  
+  .investment-card h3 {
+    font-size: 1.8rem;
   }
 }
 
 @media (max-width: 768px) {
+  .investment-types {
+    padding: 3rem 0;
+  }
+  
   .investment-grid {
     grid-template-columns: 1fr;
-    max-width: 500px;
+    gap: 2rem;
+    padding: 0 0.5rem;
+    max-width: 100%; /* Changed from 500px to ensure full width usage */
   }
   
   .investment-card {
-    padding: 2rem;
+    padding: 1.5rem; /* Reduced padding for mobile */
   }
   
   .main-image-container {
-    height: 250px; /* Smaller for mobile screens but still larger than original */
+    height: 250px;
   }
   
   .nav-arrow {
     width: 35px;
     height: 35px;
+  }
+  
+  .thumbnail {
+    width: 50px; /* Smaller thumbnails on mobile */
+    height: 50px;
+  }
+  
+  .investment-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .investment-segments h4 {
+    font-size: 1.2rem;
+  }
+}
+
+/* Additional styles for extra small screens */
+@media (max-width: 480px) {
+  .investment-types {
+    padding: 2rem 0;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .investment-card {
+    padding: 1.25rem;
+  }
+  
+  .main-image-container {
+    height: 200px; /* Even smaller for very small screens */
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .investment-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .thumbnail {
+    width: 40px; /* Even smaller thumbnails */
+    height: 40px;
+  }
+  
+  .nav-arrow {
+    width: 30px;
+    height: 30px;
   }
 }
