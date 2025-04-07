@@ -1,5 +1,5 @@
 // src/components/Team.js
-import React, { useState } from 'react';
+import React from 'react';
 import './Team.css';
 import harsh from '../assets/harsh.jpg';
 import chan from '../assets/chand.jpg';
@@ -24,44 +24,33 @@ const teamMembers = [
   },
   {
     id: 3,
-    name: "Harshdeep Singh",
-    role: "Principal Investor",
-    photo: harsh,
-    description: "Harsh has over 15 years of experience in real estate investment and strategic development."
-  },
-  {
-    id: 4,
     name: "Chandeep Singh",
     role: "Principal Investor",
     photo: chan,
     description: "Chandeep specializes in operational efficiency and portfolio management strategies."
+  },
+  {
+    id: 4,
+    name: "Harshdeep Singh",
+    role: "Principal Investor",
+    photo: harsh,
+    description: "Harsh has over 15 years of experience in real estate investment and strategic development."
   }
+  
 ];
 
 const TeamMemberCard = ({ member }) => {
-  const [isFlipped, setIsFlipped] = useState(false);
-  
   return (
-    <div 
-      className={`team-card ${isFlipped ? 'flipped' : ''}`} 
-      onClick={() => setIsFlipped(!isFlipped)}
-    >
-      <div className="team-card-inner">
-        <div className="team-card-front">
-          <img 
-            src={member.photo} 
-            alt={member.name} 
-            className="team-member-photo" 
-          />
-          <div className="team-member-info">
-            <h3>{member.name}</h3>
-            <p>{member.role}</p>
-          </div>
-        </div>
-        <div className="team-card-back">
-          <h3>{member.name}</h3>
-          <p>{member.description}</p>
-        </div>
+    <div className="team-card">
+      <img
+        src={member.photo}
+        alt={member.name}
+        className="team-member-photo"
+      />
+      <div className="team-member-info">
+        <h3>{member.name}</h3>
+        <p className="member-role">{member.role}</p>
+        {/* <p className="member-description">{member.description}</p> */}
       </div>
     </div>
   );

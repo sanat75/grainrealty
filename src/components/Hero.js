@@ -9,7 +9,7 @@ const Hero = () => {
       <div className="hero-overlay"></div>
       <div className="container hero-content">
         <h1 className="hero-title">Grain Realty</h1>
-        <p className="hero-subtitle">Investing in Potential. Building for Tomorrow.</p>
+        <p className="hero-subtitle">Global Vision, Grounded Investments.</p>
         <p className="hero-subtitle">Discover exceptional properties with Grain Realty</p>
         <div className="hero-cta">
           <a href="#investments" className="btn">Explore Investments</a>

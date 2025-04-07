@@ -28,6 +28,16 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Investment Intro Styles */
+.investment-intro {
+  margin: 1rem 0 1.5rem;
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+}
+
 /* Image Gallery Styles */
 .image-gallery {
   width: 100%;
@@ -47,7 +57,7 @@
 .main-image {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Changed from contain to cover for better mobile appearance */
+  object-fit: cover;
   transition: transform 0.3s ease;
 }
 
@@ -93,10 +103,9 @@
   gap: 10px;
   margin-bottom: 15px;
   overflow-x: auto;
-  padding: 5px 0; /* Changed from 5px to 5px 0 */
+  padding: 5px 0;
   scrollbar-width: thin;
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-  /* Make sure thumbnails are centered */
+  -webkit-overflow-scrolling: touch;
   width: 100%;
 }
 
@@ -146,8 +155,10 @@
 }
 
 .investment-segments {
+  margin-top: 1.5rem;
   margin-bottom: 2rem;
   width: 100%;
+  text-align: left;
 }
 
 .investment-segments h4 {
@@ -173,12 +184,15 @@
   list-style: none;
   padding: 0;
   margin-top: 1rem;
+  padding-left: 1.25rem;
 }
 
 .investment-segments li {
   margin-bottom: 0.7rem;
   color: var(--gray);
   padding: 0.4rem 0;
+  line-height: 1.5;
+  text-align: left;
 }
 
 .btn.btn-outline {
@@ -221,11 +235,15 @@
   }
   
   .main-image-container {
-    height: 300px; /* Slightly smaller for medium screens */
+    height: 300px;
   }
   
   .investment-card h3 {
     font-size: 1.8rem;
+  }
+  
+  .investment-intro {
+    font-size: 0.95rem;
   }
 }
 
@@ -238,11 +256,11 @@
     grid-template-columns: 1fr;
     gap: 2rem;
     padding: 0 0.5rem;
-    max-width: 100%; /* Changed from 500px to ensure full width usage */
+    max-width: 100%;
   }
   
   .investment-card {
-    padding: 1.5rem; /* Reduced padding for mobile */
+    padding: 1.5rem;
   }
   
   .main-image-container {
@@ -255,7 +273,7 @@
   }
   
   .thumbnail {
-    width: 50px; /* Smaller thumbnails on mobile */
+    width: 50px;
     height: 50px;
   }
   
@@ -266,6 +284,15 @@
   
   .investment-segments h4 {
     font-size: 1.2rem;
+  }
+  
+  .investment-intro {
+    font-size: 0.95rem;
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .investment-segments li {
+    font-size: 0.95rem;
   }
 }
 
@@ -284,7 +311,7 @@
   }
   
   .main-image-container {
-    height: 200px; /* Even smaller for very small screens */
+    height: 200px;
   }
   
   .section-title {
@@ -297,12 +324,26 @@
   }
   
   .thumbnail {
-    width: 40px; /* Even smaller thumbnails */
+    width: 40px;
     height: 40px;
   }
   
   .nav-arrow {
     width: 30px;
     height: 30px;
+  }
+  
+  .investment-intro {
+    font-size: 0.9rem;
+    margin: 0.75rem 0 1rem;
+  }
+  
+  .investment-segments h4 {
+    font-size: 1.1rem;
+  }
+  
+  .investment-segments li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
 }
