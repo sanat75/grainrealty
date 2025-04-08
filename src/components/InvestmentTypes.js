@@ -18,11 +18,22 @@ const ImageGallery = ({ images }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(0);
   const [touchEnd, setTouchEnd] = useState(0);
+  const [touchMoved, setTouchMoved] = useState(false);
 
-  const handleTouchStart = (e) => setTouchStart(e.targetTouches[0].clientX);
-  const handleTouchMove = (e) => setTouchEnd(e.targetTouches[0].clientX);
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setTouchEnd(e.targetTouches[0].clientX);
+    setTouchMoved(false);
+  };
+  
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+    setTouchMoved(true);
+  };
 
   const handleTouchEnd = () => {
+    if (!touchMoved) return;
+    
     if (touchStart - touchEnd > 50) showNextImage();
     if (touchStart - touchEnd < -50) showPrevImage();
   };
@@ -93,15 +104,23 @@ const InvestmentTypes = () => {
     {
       id: 1,
       title: "Residential",
-      intro: `We invest across the entire spectrum of residential real estate, including:
-      single-family homes, detached and semi-detached houses, condominiums, apartments, and townhomes.`,
+      intro: [
+        "Investing in residential real estate across the spectrum, including:        ",
+        "Single-family homes, Detached homes, and Semi-detached homes        ",
+        "Detached and semi-detached houses",
+        "Condominiums, Apartments, and Townhomes"
+        
+      ],
       images: [res1, res2, res3, res4, res5],
     },
     {
       id: 2,
       title: "Industrial",
-      intro: `Our industrial real estate portfolio spans the entire construction lifecycle. 
-      It includes manufacturing facilities, industrial sheds, and modern office spaces tailored for logistics and production needs.`,
+      intro: [
+        "Encompassing the full construction lifecycle, we also operate in industrial real estate, including:",
+        "Manufacturing facilities / Industrial sheds ",
+        "Office spaces"
+      ],
       images: [ind4, ind3, ind1, ind5, ind6],
     }
   ];
@@ -118,7 +137,11 @@ const InvestmentTypes = () => {
               style={{ animationDelay: `${index * 0.3}s` }}
             >
               <h3>{type.title}</h3>
-              <p className="investment-intro">{type.intro}</p>
+              <ul className="investment-intro">
+                {type.intro.map((item, idx) => (
+                  <li key={idx}>{item}</li>
+                ))}
+              </ul>
               <ImageGallery images={type.images} />
             </div>
           ))}

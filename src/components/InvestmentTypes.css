@@ -28,7 +28,7 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Investment Intro Styles */
+/* Investment Intro Styles - Updated for bullet points */
 .investment-intro {
   margin: 1rem 0 1.5rem;
   color: var(--gray);
@@ -36,6 +36,22 @@
   font-size: 1rem;
   text-align: left;
   width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.investment-intro li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.investment-intro li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
 }
 
 /* Image Gallery Styles */
@@ -109,6 +125,25 @@
   width: 100%;
 }
 
+/* Improved scrollbar styling for thumbnails */
+.thumbnails::-webkit-scrollbar {
+  height: 5px;
+}
+
+.thumbnails::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb {
+  background: var(--secondary);
+  border-radius: 10px;
+}
+
+.thumbnails::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
 .thumbnail {
   width: 60px;
   height: 60px;
@@ -145,6 +180,21 @@
   color: var(--primary);
   margin-bottom: 1rem;
   font-weight: 600;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.investment-card h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: var(--secondary);
+  border-radius: 2px;
 }
 
 .investment-card p {
@@ -223,6 +273,28 @@
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* Section title styling */
+.section-title {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: var(--primary);
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.section-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
 /* Improved media queries for better responsiveness */
 @media (max-width: 992px) {
   .investment-grid {
@@ -245,6 +317,11 @@
   .investment-intro {
     font-size: 0.95rem;
   }
+  
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -255,7 +332,7 @@
   .investment-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
     max-width: 100%;
   }
   
@@ -294,6 +371,11 @@
   .investment-segments li {
     font-size: 0.95rem;
   }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
 }
 
 /* Additional styles for extra small screens */
@@ -315,8 +397,8 @@
   }
   
   .section-title {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.8rem;
   }
   
   .investment-card h3 {
@@ -336,6 +418,10 @@
   .investment-intro {
     font-size: 0.9rem;
     margin: 0.75rem 0 1rem;
+  }
+  
+  .investment-intro li {
+    padding-left: 1.2rem;
   }
   
   .investment-segments h4 {
