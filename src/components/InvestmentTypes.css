@@ -433,3 +433,64 @@
     margin-bottom: 0.5rem;
   }
 }
+/* Add these new styles to your InvestmentTypes.css file */
+
+.investment-intro-container {
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  text-align: left;
+}
+
+.investment-first-point {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+
+/* Existing styles for the bulleted items */
+.investment-intro {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
+  list-style-type: none;
+  padding-left: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.investment-intro li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.investment-intro li:before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--secondary);
+  font-weight: bold;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .investment-first-point,
+  .investment-intro {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .investment-first-point,
+  .investment-intro {
+    font-size: 0.9rem;
+  }
+  
+  .investment-intro li {
+    padding-left: 1.2rem;
+  }
+}

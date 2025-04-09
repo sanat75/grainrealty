@@ -105,11 +105,9 @@ const InvestmentTypes = () => {
       id: 1,
       title: "Residential",
       intro: [
-        "Investing in residential real estate across the spectrum, including:        ",
-        "Single-family homes, Detached homes, and Semi-detached homes        ",
-        "Detached and semi-detached houses",
+        "Investing in residential real estate across the spectrum, including: ",
+        "Single-family homes, Detached homes, and Semi-detached homes",
         "Condominiums, Apartments, and Townhomes"
-        
       ],
       images: [res1, res2, res3, res4, res5],
     },
@@ -118,7 +116,7 @@ const InvestmentTypes = () => {
       title: "Industrial",
       intro: [
         "Encompassing the full construction lifecycle, we also operate in industrial real estate, including:",
-        "Manufacturing facilities / Industrial sheds ",
+        "Manufacturing facilities / Industrial sheds",
         "Office spaces"
       ],
       images: [ind4, ind3, ind1, ind5, ind6],
@@ -137,11 +135,14 @@ const InvestmentTypes = () => {
               style={{ animationDelay: `${index * 0.3}s` }}
             >
               <h3>{type.title}</h3>
-              <ul className="investment-intro">
-                {type.intro.map((item, idx) => (
-                  <li key={idx}>{item}</li>
-                ))}
-              </ul>
+              <div className="investment-intro-container">
+                <p className="investment-first-point">{type.intro[0]}</p>
+                <ul className="investment-intro">
+                  {type.intro.slice(1).map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              </div>
               <ImageGallery images={type.images} />
             </div>
           ))}
