@@ -28,9 +28,26 @@
   box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Updated Investment Intro Container Styles */
+.investment-intro-container {
+  width: 100%;
+  margin: 1rem 0 1.5rem;
+  text-align: center;  /* Center the container content */
+}
+
+.investment-first-point {
+  color: var(--gray);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+  padding: 0;
+  display: block;
+  text-align: center;  /* Center the intro text */
+}
+
 /* Investment Intro Styles - Updated for bullet points */
 .investment-intro {
-  margin: 1rem 0 1.5rem;
+  margin: 0.25rem 0 0;
   color: var(--gray);
   line-height: 1.6;
   font-size: 1rem;
@@ -38,12 +55,14 @@
   width: 100%;
   list-style-type: none;
   padding-left: 0;
+  display: inline-block;  /* To allow proper alignment */
 }
 
 .investment-intro li {
   position: relative;
   padding-left: 1.5rem;
   margin-bottom: 0.5rem;
+  text-align: left;  /* Keep bullets left-aligned */
 }
 
 .investment-intro li:before {
@@ -314,7 +333,12 @@
     font-size: 1.8rem;
   }
   
-  .investment-intro {
+  .investment-intro-container {
+    margin: 0.75rem 0 1.25rem;
+  }
+  
+  .investment-intro, 
+  .investment-first-point {
     font-size: 0.95rem;
   }
   
@@ -363,9 +387,9 @@
     font-size: 1.2rem;
   }
   
-  .investment-intro {
+  .investment-intro, 
+  .investment-first-point {
     font-size: 0.95rem;
-    margin: 0.75rem 0 1.25rem;
   }
   
   .investment-segments li {
@@ -415,9 +439,9 @@
     height: 30px;
   }
   
-  .investment-intro {
+  .investment-intro, 
+  .investment-first-point {
     font-size: 0.9rem;
-    margin: 0.75rem 0 1rem;
   }
   
   .investment-intro li {
@@ -431,66 +455,5 @@
   .investment-segments li {
     font-size: 0.9rem;
     margin-bottom: 0.5rem;
-  }
-}
-/* Add these new styles to your InvestmentTypes.css file */
-
-.investment-intro-container {
-  width: 100%;
-  margin: 1rem 0 1.5rem;
-  text-align: left;
-}
-
-.investment-first-point {
-  color: var(--gray);
-  line-height: 1.6;
-  font-size: 1rem;
-  margin-bottom: 1rem;
-  padding-left: 0;
-}
-
-/* Existing styles for the bulleted items */
-.investment-intro {
-  color: var(--gray);
-  line-height: 1.6;
-  font-size: 1rem;
-  text-align: left;
-  width: 100%;
-  list-style-type: none;
-  padding-left: 0;
-  margin-top: 0.5rem;
-  margin-bottom: 0;
-}
-
-.investment-intro li {
-  position: relative;
-  padding-left: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.investment-intro li:before {
-  content: "•";
-  position: absolute;
-  left: 0;
-  color: var(--secondary);
-  font-weight: bold;
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-  .investment-first-point,
-  .investment-intro {
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .investment-first-point,
-  .investment-intro {
-    font-size: 0.9rem;
-  }
-  
-  .investment-intro li {
-    padding-left: 1.2rem;
   }
 }

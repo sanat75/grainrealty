@@ -100,28 +100,28 @@ const InvestmentTypes = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  const investmentTypes = [
-    {
-      id: 1,
-      title: "Residential",
-      intro: [
-        "Investing in residential real estate across the spectrum, including: ",
-        "Single-family homes, Detached homes, and Semi-detached homes",
-        "Condominiums, Apartments, and Townhomes"
-      ],
-      images: [res1, res2, res3, res4, res5],
-    },
-    {
-      id: 2,
-      title: "Industrial",
-      intro: [
-        "Encompassing the full construction lifecycle, we also operate in industrial real estate, including:",
-        "Manufacturing facilities / Industrial sheds",
-        "Office spaces"
-      ],
-      images: [ind4, ind3, ind1, ind5, ind6],
-    }
-  ];
+const investmentTypes = [
+  {
+    id: 1,
+    title: "Residential",
+    intro: [
+      "Investing in residential real estate across the spectrum, including:",
+      "Single-family homes, Detached homes, and Semi-detached homes",
+      "Condominiums, Apartments, and Townhomes"
+    ],
+    images: [res1, res2, res3, res4],
+  },
+  {
+    id: 2,
+    title: "Industrial",
+    intro: [
+      "Encompassing the full construction lifecycle, including:",
+      "Manufacturing facilities / Industrial sheds",
+      "Office spaces"
+    ],
+    images: [ind4, ind3, ind1, ind5, ind6],
+  }
+];
 
   return (
     <section id="investments" className="investment-types">
