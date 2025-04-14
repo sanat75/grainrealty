@@ -12,14 +12,15 @@
 }
 
 .team-container {
-  max-width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   overflow: hidden;
 }
 
 .team-row {
   display: flex;
+  justify-content: center;
   gap: 1.5rem;
-  max-width: 1400px;
   margin: 0 auto;
   padding: 0.5rem;
   overflow-x: auto;
@@ -99,6 +100,7 @@
   .team-row {
     gap: 1rem;
     padding: 0.5rem 1rem;
+    justify-content: flex-start;
   }
   
   .team-card {

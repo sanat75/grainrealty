@@ -4,6 +4,8 @@ import res1 from '../assets/res1.jpg';
 import res2 from '../assets/res2.jpg';
 import res3 from '../assets/res3.png';
 import res4 from '../assets/indoor1.jpg';
+import res6 from '../assets/res5.png';
+
 import res5 from '../assets/indoor2.jpg';
 import ind1 from '../assets/industry1.jpg';
 import ind2 from '../assets/industry2.jpg';
@@ -105,17 +107,17 @@ const investmentTypes = [
     id: 1,
     title: "Residential",
     intro: [
-      "Investing in residential real estate across the spectrum, including:",
-      "Single-family homes, Detached homes, and Semi-detached homes",
+      "Comprehensive investment in residential properties across diverse formats, including:      ",
+      "Single-family homes, Detached and Semi-detached homes",
       "Condominiums, Apartments, and Townhomes"
     ],
-    images: [res1, res2, res3, res4],
+    images: [res1, res2, res3, res4,res6],
   },
   {
     id: 2,
     title: "Industrial",
     intro: [
-      "Encompassing the full construction lifecycle, including:",
+      "End-to-end development and investment in industrial real estate, including:      ",
       "Manufacturing facilities / Industrial sheds",
       "Office spaces"
     ],
