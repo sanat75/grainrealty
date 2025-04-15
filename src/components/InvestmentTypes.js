@@ -5,6 +5,10 @@ import res2 from '../assets/res2.jpg';
 import res3 from '../assets/res3.png';
 import res4 from '../assets/indoor1.jpg';
 import res6 from '../assets/res5.png';
+import res7 from '../assets/indoor3.jpg';
+import res8 from '../assets/indoor4.jpg';
+import res9 from '../assets/indoor5.jpg';
+import res10 from '../assets/indoor6.jpg';
 
 import res5 from '../assets/indoor2.jpg';
 import ind1 from '../assets/industry1.jpg';
@@ -13,6 +17,9 @@ import ind3 from '../assets/industry3.jpg';
 import ind4 from '../assets/industry4.jpg';
 import ind5 from '../assets/industry5.jpg';
 import ind6 from '../assets/industry6.jpg';
+import ind11 from '../assets/ind11.jpg';
+import ind12 from '../assets/ind12.jpg';
+
 
 // Image Gallery Component
 const ImageGallery = ({ images }) => {
@@ -107,21 +114,21 @@ const investmentTypes = [
     id: 1,
     title: "Residential",
     intro: [
-      "Comprehensive investment in residential properties across diverse formats, including:      ",
+      "Comprehensive investment in residential properties across diverse formats, including:",
       "Single-family homes, Detached and Semi-detached homes",
       "Condominiums, Apartments, and Townhomes"
     ],
-    images: [res1, res2, res3, res4,res6],
+    images: [res1, res3, res4, res8, res9, res10],
   },
   {
     id: 2,
     title: "Industrial",
     intro: [
-      "End-to-end development and investment in industrial real estate, including:      ",
+      "End-to-end development and investment in industrial real estate, including:",
       "Manufacturing facilities / Industrial sheds",
       "Office spaces"
     ],
-    images: [ind4, ind3, ind1, ind5, ind6],
+    images: [ind4, ind3, ind5, ind6, ind2, ind11, ind12],
   }
 ];
 

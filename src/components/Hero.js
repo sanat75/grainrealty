@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
 import bgImage from '../assets/bg1.jpg';
+import res4 from '../assets/indoor1.jpg';
+import res6 from '../assets/res5.png';
+
 
 const Hero = () => {
   return (
