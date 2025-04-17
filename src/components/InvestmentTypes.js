@@ -128,7 +128,7 @@ const investmentTypes = [
       "Manufacturing facilities / Industrial sheds",
       "Office spaces"
     ],
-    images: [ind4, ind3, ind5, ind6, ind2, ind11, ind12],
+    images: [ind4, ind3, ind5, ind6, ind11, ind12],
   }
 ];
 
